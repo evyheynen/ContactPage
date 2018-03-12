@@ -11,13 +11,13 @@ public interface ContactRepository {
     List<ContactPage> findAllContactPages();
     List<Person> findAllPersons();
     List<Subject> findAllSubjects();
+    List<ContactPage> findBySubject(Subject subject);
 
     ContactPage findContactPageById(Long id);
     Person findPersonbyId(Long id);
-    Subject findSubject(Subject subject);
 
     int addContactPage(ContactPage contactPage);
-    int delete(ContactPage contactPage);
+    int deleteById(Long id);
     int update(Long id, ContactPage contactPage);
 
 }

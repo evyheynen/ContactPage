@@ -35,42 +35,42 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public List<Person> findAllPersons() {
-        return null;
+        return repo.findAllPersons();
     }
 
     @Override
     public List<Subject> findAllSubjects() {
-        return null;
+        return repo.findAllSubjects();
+    }
+
+    @Override
+    public List<ContactPage> findBySubject(Subject subject) {
+        return repo.findBySubject(subject);
     }
 
     @Override
     public ContactPage findContactPageById(Long id) {
-        return null;
+        return repo.findContactPageById(id);
     }
 
     @Override
     public Person findPersonbyId(Long id) {
-        return null;
-    }
-
-    @Override
-    public Subject findSubject(Subject subject) {
-        return null;
+        return repo.findPersonbyId(id);
     }
 
     @Override
     public int addContactPage(ContactPage contactPage) {
-        return 0;
+        return repo.addContactPage(contactPage);
     }
 
     @Override
-    public int delete(ContactPage contactPage) {
-        return 0;
+    public int deleteById(Long id) {
+        return repo.deleteById(id);
     }
 
     @Override
     public int update(Long id, ContactPage contactPage) {
-        return 0;
+        return repo.update(id,contactPage);
     }
 
     @PostConstruct
