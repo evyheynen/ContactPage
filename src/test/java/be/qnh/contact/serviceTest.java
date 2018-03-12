@@ -77,7 +77,7 @@ public class serviceTest {
     }
 
     @Test
-    public void findAllPersons() {
+    public void testfindAllPersons() {
         when(this.repo.findAllPersons()).thenReturn(persons);
         Iterable<Person> personsFromService = service.findAllPersons();
         assertThat((List<Person>) personsFromService).size().isEqualTo(1);
@@ -88,14 +88,14 @@ public class serviceTest {
     }
 
     @Test
-    public void findAllSubjects() {
+    public void testfindAllSubjects() {
         when(this.repo.findAllSubjects()).thenReturn(subjects);
         Iterable<Subject> subjectFromService = service.findAllSubjects();
         assertThat(((List<Subject>) subjectFromService).size()).isEqualTo(1);
     }
 
     @Test
-    public void findBySubject() {
+    public void testfindBySubject() {
         when(this.repo.findBySubject(Subject.JAVA)).thenReturn(contactpages);
         Iterable<ContactPage> pageFromService = service.findBySubject(Subject.JAVA);
         assertThat(pageFromService).size().isEqualTo(1);
@@ -104,7 +104,7 @@ public class serviceTest {
     }
 
     @Test
-    public void findContactPageById() {
+    public void testfindContactPageById() {
         when(this.repo.findContactPageById(1L)).thenReturn(contactPage);
         ContactPage pageFromService = service.findContactPageById(1L);
         assertThat(((ContactPage) pageFromService).getSubject().equals(Subject.JAVA));
@@ -113,7 +113,7 @@ public class serviceTest {
     }
 
     @Test
-    public void findPersonbyId() {
+    public void testfindPersonbyId() {
         when(this.repo.findPersonbyId(1L)).thenReturn(person1);
         Person personFromService = service.findPersonbyId(1L);
         assertThat(((Person) personFromService).getFirstName()).isEqualToIgnoringCase("Evy");
@@ -123,7 +123,7 @@ public class serviceTest {
     }
 
     @Test
-    public void addContactPage() {
+    public void testaddContactPage() {
         when(this.repo.addContactPage(contactPage)).thenReturn(1);
         int addedPage = service.addContactPage(contactPage);
         assertThat(addedPage).isNotNull();
@@ -131,14 +131,14 @@ public class serviceTest {
     }
 
     @Test
-    public void delete() {
+    public void testdelete() {
         when(this.repo.deleteById(1L)).thenReturn(1);
         int deletedPage = service.deleteById(1L);
         assertThat(deletedPage).isEqualTo(1);
     }
 
 //    @Test
-//    public void update() {
+//    public void testupdate() {
 //        when(repo.findContactPageById(1L)).thenReturn(contactPage);
 //        when(repo.addContactPage(contactPage)).thenReturn(1);
 //        int updatedPage = service.update(1L, contactPage);
