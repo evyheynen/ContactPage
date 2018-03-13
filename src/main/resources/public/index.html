@@ -3,13 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <title>Contactpage</title>
+    <link rel="stylesheet" href="main.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <body>
+<h1>Welcome!</h1>
+<div class="info"><<p> Made with <i class="fa fa-heart"></i> by Evy Heynen </p></a></div>
 
-<div class="container">
-    <h1>Welcome!</h1>
+<form>
+    <h1>Please fill in the contactpage here :</h1>
 
-</div>
+    <div class="contentform">
+        <div id="sendmessage"> Your message has been sent successfully. Thank you.</div>
+
+
+        <div class="leftcontact">
+            <div class="form-group">
+                <p>First name<span>*</span></p>
+                <span class="icon-case"><i class="fa fa-male"></i></span>
+                <input type="text" name="firstName" id="nom" data-rule="required"/>
+                <div class="validation"></div>
+            </div>
+
+            <div class="form-group">
+                <p>Last name <span>*</span></p>
+                <span class="icon-case"><i class="fa fa-user"></i></span>
+                <input type="text" name="lastName" id="lname" data-rule="required"/>
+                <div class="validation"></div>
+            </div>
+
+            <div class="form-group">
+                <p>E-mail <span>*</span></p>
+                <span class="icon-case"><i class="fa fa-envelope"></i></span>
+                <input type="email" name="email" id="email" data-rule="email"/>
+                <div class="validation"></div>
+            </div>
+
+        </div>
+
+        <div class="rightcontact">
+                    <div class="form-group">
+                        <p>Street</p>
+                        <span class="icon-case"><i class="fa fa-home"></i></span>
+                        <input type="text" name="street" id="street" data-rule="required"/>
+                    </div>
+                    <div class="form-group">
+                        <p>Number </p>
+                        <span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+                        <input type="text" name="number" id="number" data-rule="required"/>
+                    </div>
+
+            <div class="form-group">
+                <p>Postcode </p>
+                <span class="icon-case"><i class="fa fa-map-marker"></i></span>
+                <input type="text" name="postalcode" id="postalcode" data-rule="required""/>
+            </div>
+
+            <div class="form-group">
+                <p>City </p>
+                <span class="icon-case"><i class="fa fa-building"></i></span>
+                <input type="text" name="town" id="town" data-rule="required"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p>Subject <span>*</span></p>
+            <span class="icon-case"><i class="fa fa-comment"></i></span>
+            <select class="form-control" id="subject" name="subject">
+                <option>JAVA</option>
+                <option>HIBERNATE</option>
+                <option>SPRING</option>
+            </select>
+            <div class="validation"></div>
+        </div>
+
+        <div class="form-group">
+            <p>Message <span>*</span></p>
+            <span class="icon-case"><i class="fa fa-comments"></i></span>
+            <textarea name="message" rows="14" data-rule="required"></textarea>
+            <div class="validation"></div>
+        </div>
+
+    </div>
+    <button type="submit" class="bouton-contact" method="post">Send</button>
+
+</form>
+
 
 </body>
 </html>
