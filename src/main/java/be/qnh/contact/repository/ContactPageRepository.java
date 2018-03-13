@@ -10,6 +10,5 @@ import java.util.List;
 @Repository
 public interface ContactPageRepository extends JpaRepository<ContactPage,Long> {
 
-    ContactPage findOne(Long id);
     List<ContactPage> findBySubject(Subject subject);
 }

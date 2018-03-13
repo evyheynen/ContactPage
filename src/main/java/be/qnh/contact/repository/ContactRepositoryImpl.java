@@ -52,12 +52,12 @@ public class ContactRepositoryImpl implements ContactRepository {
 
     @Override
     public ContactPage findContactPageById(Long id) {
-        return contactPageRepository.findOne(id);
+        return contactPageRepository.findById(id).orElse(null);
     }
 
     @Override
     public Person findPersonbyId(Long id) {
-        return personRepository.findOne(id);
+        return personRepository.findById(id).orElse(null);
     }
 
     @Override
