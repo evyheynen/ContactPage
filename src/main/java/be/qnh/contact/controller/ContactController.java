@@ -18,7 +18,7 @@ public class ContactController {
     @Autowired
     private ContactService service;
 
-    @GetMapping
+    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity findAllContactPages(){
         return ResponseEntity.ok(service.findAllContactPages());
     }
@@ -33,7 +33,7 @@ public class ContactController {
         return ResponseEntity.ok(service.findAllSubjects());
     }
 
-    @RequestMapping(value = "{subject}", method = RequestMethod.GET)
+    @RequestMapping(value = "/subject/{subject}", method = RequestMethod.GET)
     public ResponseEntity<Iterable<ContactPage>> findPageBySubject(@PathVariable Subject subject) {
         List<ContactPage> result = this.service.findBySubject(subject);
         if (result == null) {
@@ -42,7 +42,7 @@ public class ContactController {
             return new ResponseEntity<>(result, HttpStatus.OK);
         }
     }
-    @RequestMapping(value = "{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<ContactPage> findPageById(@PathVariable Long id) {
         ContactPage result = this.service.findContactPageById(id);
         if (result == null) {
@@ -62,7 +62,7 @@ public class ContactController {
         }
     }
 
-    @PostMapping
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity addContactPage(@RequestBody ContactPage contactPage){
         return ResponseEntity.ok(service.addContactPage(contactPage));
     }

@@ -1,6 +1,8 @@
 package be.qnh.contact.Model;
 
-public enum  Subject {
+import java.io.Serializable;
+
+public enum  Subject implements Serializable{
         JAVA, HIBERNATE, SPRING;
 
 }

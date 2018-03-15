@@ -1,9 +1,10 @@
 package be.qnh.contact.Model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class ContactPage {
+public class ContactPage  implements Serializable{
 
     @Id
     @GeneratedValue
