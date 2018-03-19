@@ -23,7 +23,7 @@ public class ContactController {
         return ResponseEntity.ok(service.findAllContactPages());
     }
 
-    @GetMapping("/person")
+    @RequestMapping(method = RequestMethod.GET, value = "/person")
     public ResponseEntity findAllPersons(){
         return ResponseEntity.ok(service.findAllPersons());
     }
